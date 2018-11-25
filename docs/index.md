@@ -1,27 +1,51 @@
-# 首页
-
 ## 欢迎来到我的成长日记
 
 <!-- For full documentation visit [mkdocs.org](http://mkdocs.org). -->
-Hi， 我叫 豚豚
+### Hi， 我叫 豚豚
+坐标 —— 北京
+
+爱好 电影，游泳
 
 一个2019届双非本科毕业生，
-现任职国内某知名互联网大厂。
-
+现在职国内某知名互联网大厂。
 
 ## 聊点什么
 在写这个搭建这个博客的时候我已经工作半年了。
 
-在这半年中学习到了很多的知识
+在这半年中学习到了很多的知识,
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+但是两点一线的生活，仿佛让我可以直接看到20年后的自己
 
-## Project layout
+渐渐的我开始迷失，在技术上“得过且过”，放纵自己。
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+每天浑浑噩噩，虽然忙碌但也迷茫。
+
+但是，在这个周末我想通一件事情。
+
+就是 我不甘平庸，我要做到更好。
+
+## 为什么写博客
+
+时间飞快流逝，
+
+记录生活的点滴，记录成长足迹
+
+温故而知新，厚积而薄发。
+
+时刻警醒自己，努力的脚步不应该停下。
+
+最后借大Boss的一句话
+
+>长期有耐心,对未来有信心。
+
+
+## About Me
+
+E-mail: qmengty@gmail.com
+
+Site  : www.tq621.top
+
+GitHub: https://github.com/mqaaa
+
+## End
+> Thanks, Have a Nice Day.

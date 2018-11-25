@@ -23,3 +23,10 @@
   希望你会看到未来万丈光芒的我。
   
   On 18.11.23 夜
+
+
+  ## mkdocs操作方法
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs help` - Print this help message.
