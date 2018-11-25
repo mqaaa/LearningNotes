@@ -1,1 +1,23 @@
-site_name: My Docs
+site_name: 小白程序员成长日记
+repo_url: https://github.com/mqaaa
+site_description: 在忙碌的生活中，梦想应更加耀眼。
+site_author: 豚豚
+copyright: 小白程序员成长日记@2018
+# theme: bootstrap
+
+
+nav:
+- Home: 'index.md'
+- Vue:
+  - 'Writing your docs': 'writing-your-docs.md'
+  - 'Styling your docs': 'styling-your-docs.md'
+- Echanrt/d3:
+  - 'Writing your docs': 'writing-your-docs.md'
+  - 'Styling your docs': 'styling-your-docs.md'
+- Python:
+  - 'License': 'license.md'
+  - 'Release Notes': 'release-notes.md'
+- Go:
+  - 'Writing your docs': 'writing-your-docs.md'
+  - 'Styling your docs': 'styling-your-docs.md'
+
