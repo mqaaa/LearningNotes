@@ -9,7 +9,7 @@ copyright: 小白程序员成长日记@2018
 nav:
 - Home: 'index.md'
 - Vue:
-  - 'Writing your docs': 'writing-your-docs.md'
+  - '日常贴士': './vue/experience.md'
   - 'Styling your docs': 'styling-your-docs.md'
 - Echanrt/d3:
   - 'Writing your docs': 'writing-your-docs.md'
