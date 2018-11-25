@@ -14,9 +14,6 @@ Hi， 我叫 豚豚
 
 在这半年中学习到了很多的知识
 
-
-
-
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
 * `mkdocs build` - Build the documentation site.
