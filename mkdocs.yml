@@ -20,4 +20,6 @@ nav:
 - Go:
   - 'Writing your docs': 'writing-your-docs.md'
   - 'Styling your docs': 'styling-your-docs.md'
+- 面试:
+  - '逻辑&创新思维': './interview/logical.md'
 
