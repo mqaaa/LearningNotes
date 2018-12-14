@@ -75,9 +75,17 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../jupyter/">Jupyer</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Python</a>
+</li>
                                     
 <li >
     <a href="../../license.md">License</a>
@@ -127,6 +135,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../jupyter/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../interview/logical/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                             <li>
                                 <a href="https://github.com/mqaaa/edit/master/docs/python/Python.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
@@ -139,11 +157,199 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#python">Python</a></li>
+            <li><a href="#python_1">Python的面向对象</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="python">Python</h1></div>
+<h1 id="python">Python</h1>
+<h2 id="python_1">Python的面向对象</h2>
+<p>其实比较简单，写了半年的<code>pyhton</code>，今天重温了一下，感觉收获良多。</p>
+<h3 id="_1">内置属性类</h3>
+<ul>
+<li><strong>dict</strong> : 类的属性（包含一个字典，由类的数据属性组成）</li>
+<li><strong>doc</strong> :类的文档字符串</li>
+<li><strong>name</strong>: 类名</li>
+<li><strong>module</strong>: 类定义所在的模块（类的全名是'<strong>main</strong>.className'，如果类位于一个导入模块mymod中，那么className.<strong>module</strong> 等于 mymod）</li>
+<li><strong>bases</strong> : 类的所有父类构成元素（包含了一个由所有父类组成的元组）</li>
+</ul>
+<pre><code class="python">#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+class Employee:
+    &quot;&quot;&quot; 所有员工的基类 &quot;&quot;&quot;
+    empCount = 0
+
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+        Employee.empCount += 1
+
+    def displayCount(self):
+        print &quot;Total Employee %d&quot; % Employee.empCount
+
+    def displayEmployee(self):
+        print &quot;Name : &quot;, self.name,  &quot;, Salary: &quot;, self.salary
+
+    print &quot;Employee.__doc__:&quot;, Employee.__doc__
+    print &quot;Employee.__name__:&quot;, Employee.__name__
+    print &quot;Employee.__module__:&quot;, Employee.__module__
+    print &quot;Employee.__bases__:&quot;, Employee.__bases__
+    print &quot;Employee.__dict__:&quot;, Employee.__dict__
+
+# ------------------ 结 果 ------------------
+Employee.__doc__: 所有员工的基类
+Employee.__name__: Employee
+Employee.__module__: __main__
+Employee.__bases__: ()
+Employee.__dict__: {'__module__': '__main__', 'displayCount': &lt;function displayCount at 0x10a939c80&gt;, 'empCount': 0, 'displayEmployee': &lt;function displayEmployee at 0x10a93caa0&gt;, '__doc__': '\xe6\x89\x80\xe6\x9c\x89\xe5\x91\x98\xe5\xb7\xa5\xe7\x9a\x84\xe5\x9f\xba\xe7\xb1\xbb', '__init__': &lt;function __init__ at 0x10a939578&gt;}
+
+</code></pre>
+
+<p><a href="http://www.runoob.com/python/python-object.html">这个例子来自菜鸟教程</a></p>
+<h3 id="_2">类的继承</h3>
+<pre><code class="python">#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+class Parent:        # 定义父类
+    parentAttr = 100
+    def __init__(self):
+        print &quot;调用父类构造函数&quot;
+
+    def parentMethod(self):
+        print '调用父类方法'
+
+    def setAttr(self, attr):
+        Parent.parentAttr = attr
+
+    def getAttr(self):
+        print &quot;父类属性 :&quot;, Parent.parentAttr
+
+class Child(Parent): # 定义子类
+   def __init__(self):
+      print &quot;调用子类构造方法&quot;
+
+   def childMethod(self):
+      print '调用子类方法'
+
+c = Child()          # 实例化子类
+c.childMethod()      # 调用子类的方法
+c.parentMethod()     # 调用父类方法
+c.setAttr(200)       # 再次调用父类的方法 - 设置属性值
+c.getAttr()          # 再次调用父类的方法 - 获取属性值
+
+# ------------------ 结 果 ------------------
+调用子类构造方法
+调用子类方法
+调用父类方法
+父类属性 : 200
+</code></pre>
+
+<p>这个在(flask)[]中的 RESTful API 的实现用到</p>
+<pre><code class="python">from flask import request
+from flask_restful import Resource
+# 做了restful的继承，继承相关的方法，这块一用到之后一会的方法重写
+class APIClassXXX(Resource):
+    def get(self):
+        user = request.args.get('user', '')
+        ...
+
+</code></pre>
+
+<p>了解<em><a href="https://flask-restful.readthedocs.io/en/0.3.5/quickstart.html">flask-restful</a></em></p>
+<p>了解<em><a href="http://www.ruanyifeng.com/blog/2018/10/restful-api-best-practices.html">RESTful AP-阮一峰</a></em></p>
+<h3 id="_3">基础重载方法</h3>
+<p>这个我也还没有用过</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+<th>简单调用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__init__ ( self [,args...] )</code></td>
+<td>构造函数</td>
+<td>简单的调用方法: <code>obj = className(args)</code></td>
+</tr>
+<tr>
+<td><code>__del__( self )</code></td>
+<td>析构方法, 删除一个对象</td>
+<td>简单的调用方法 : <code>del obj</code></td>
+</tr>
+<tr>
+<td><code>__repr__( self )</code></td>
+<td>转化为供解释器读取的形式</td>
+<td>简单的调用方法 : <code>repr(obj)</code></td>
+</tr>
+<tr>
+<td><code>__str__( self )</code></td>
+<td>用于将值转化为适于人阅读的形式</td>
+<td>简单的调用方法 : <code>str(obj)</code></td>
+</tr>
+<tr>
+<td><code>__cmp__ ( self, x )</code></td>
+<td>对象比较</td>
+<td>简单的调用方法 : <code>cmp(obj, x)</code></td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://www.runoob.com/python/python-object.html">运算法重载</a></p>
+<h3 id="_4">私有属性</h3>
+<p>python中的<em>私有属性</em>用 <code>__</code> 两个下划线来开头</p>
+<ul>
+<li>
+<p><code>__foo__</code>: 定义的是特殊方法，一般是系统定义名字 ，类似 <code>__init__()</code> 之类的。</p>
+</li>
+<li>
+<p><code>_foo</code>: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 <code>from module import *</code></p>
+</li>
+<li>
+<p><code>__foo</code>: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。</p>
+</li>
+</ul>
+<p><em>Python不允许实例化的类访问私有数据，但你可以使用 <code>object._className__attrName</code>（ 对象名._类名__私有属性名 ）访问属性</em></p>
+<h3 id="_5">是否需要预加载</h3>
+<p>在声明class的时候，我们可以使用<code>@classmethod</code>,在外部可以免实例化，直接引用。</p>
+<pre><code class="python">class example_class():
+
+    # 这里的参数可以只会加载一次
+    # 我一般会在这里 redis_db.hscan(), 这样的化在这里只加载一次就好
+    init_A = []
+
+    @classmethod
+    def temp_args(cls):
+        &quot;&quot;&quot;免事例的函数&quot;&quot;&quot;
+        print cls.init_A
+        print cls.init_A.get('xxx', ')
+        ...
+
+# -------------- 使用方法 --------------
+example_class.temp_args()
+</code></pre>
+
+<p>我在下面写一个对比</p>
+<pre><code class="python">class self_func_demo():
+    &quot;&quot;&quot;
+        这个是需要实例话的机器
+    &quot;&quot;&quot;
+    def __init__(self):
+        &quot;&quot;&quot;
+            只加载一次 
+        &quot;&quot;&quot;
+        redis_db = falconRedis.new_redis_client()
+        self.user_all = redis_db.hgetall('xxx')
+
+    def get_func(self, key):
+        &quot;&quot;&quot; 方法xxx &quot;&quot;&quot;
+        user = self.user_all.get(key, '')
+        ...
+# -------------- 使用方法 --------------
+f = self_func_demo()
+f.get_func(key)
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

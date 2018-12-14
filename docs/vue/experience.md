@@ -89,7 +89,7 @@ methods: {
             self.params = ....
             self.AllInfoList = res.data.xxxxx
             ...
-            
+
             self.paramUpdate(self.params)
         })
     }
