@@ -164,3 +164,78 @@ class self_func_demo():
 f = self_func_demo()
 f.get_func(key)
 ```
+
+## 函数中`*args` 和`**kwargs`的用法
+
+当函数的参数不确定时，可以使用`*args` 和`**kwargs`，`*args` 没有`key`值，`**kwargs`有`key`值。
+### 函数声明时
+#### `*args` demo
+```python
+def fun_var_args(farg, *args):
+    print "arg:", farg
+    for value in args:
+        print "another arg:", value
+
+# *args可以当作可容纳多个变量组成的list
+fun_var_args(1, "two", 3)
+
+# ------------ result ------------
+arg: 1
+another arg: two
+another arg: 3
+```
+
+#### `**kwargs` demo
+
+```python
+def fun_var_kwargs(farg, **kwargs):
+    print "arg:", farg
+    for key in kwargs:
+        print "another keyword arg: %s: %s" % (key, kwargs[key])
+# myarg2和myarg3被视为key， 感觉**kwargs可以当作容纳多个key和value的dictionary
+fun_var_kwargs(farg=1, myarg2="two", myarg3=3)
+
+# ------------ result ------------
+arg: 1
+another keyword arg: myarg2: two
+another keyword arg: myarg3: 3
+
+```
+
+### 使用函数时
+#### `*args` demp
+```python
+def fun_var_args_call(arg1, arg2, arg3):
+    print "arg1:", arg1
+    print "arg2:", arg2
+    print "arg3:", arg3
+
+#list
+args = ["two", 3]
+fun_var_args_call(1, *args)
+
+# ------------ result ------------
+arg1: 1
+arg2: two
+arg3: 3
+```
+#### `**kwargs` demo
+```python
+
+def fun_var_args_call(arg1, arg2, arg3):
+    print "arg1:", arg1
+    print "arg2:", arg2
+    print "arg3:", arg3
+
+# dictionary
+kwargs = {"arg3": 3, "arg2": "two"}
+fun_var_args_call(1, **kwargs)
+
+# ------------ result ------------
+arg1: 1
+arg2: two
+arg3: 3
+```
+[Python定义的函数（或调用）中参数*args 和**kwargs的用法](https://blog.csdn.net/u010852680/article/details/77848570)
+
+

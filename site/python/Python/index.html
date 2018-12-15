@@ -158,6 +158,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#python">Python</a></li>
             <li><a href="#python_1">Python的面向对象</a></li>
+            <li><a href="#args-kwargs">函数中*args 和**kwargs的用法</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -349,7 +350,76 @@ example_class.temp_args()
 # -------------- 使用方法 --------------
 f = self_func_demo()
 f.get_func(key)
-</code></pre></div>
+</code></pre>
+
+<h2 id="args-kwargs">函数中<code>*args</code> 和<code>**kwargs</code>的用法</h2>
+<p>当函数的参数不确定时，可以使用<code>*args</code> 和<code>**kwargs</code>，<code>*args</code> 没有<code>key</code>值，<code>**kwargs</code>有<code>key</code>值。</p>
+<h3 id="_6">函数声明时</h3>
+<h4 id="args-demo"><code>*args</code> demo</h4>
+<pre><code class="python">def fun_var_args(farg, *args):
+    print &quot;arg:&quot;, farg
+    for value in args:
+        print &quot;another arg:&quot;, value
+
+# *args可以当作可容纳多个变量组成的list
+fun_var_args(1, &quot;two&quot;, 3)
+
+# ------------ result ------------
+arg: 1
+another arg: two
+another arg: 3
+</code></pre>
+
+<h4 id="kwargs-demo"><code>**kwargs</code> demo</h4>
+<pre><code class="python">def fun_var_kwargs(farg, **kwargs):
+    print &quot;arg:&quot;, farg
+    for key in kwargs:
+        print &quot;another keyword arg: %s: %s&quot; % (key, kwargs[key])
+# myarg2和myarg3被视为key， 感觉**kwargs可以当作容纳多个key和value的dictionary
+fun_var_kwargs(farg=1, myarg2=&quot;two&quot;, myarg3=3)
+
+# ------------ result ------------
+arg: 1
+another keyword arg: myarg2: two
+another keyword arg: myarg3: 3
+
+</code></pre>
+
+<h3 id="_7">使用函数时</h3>
+<h4 id="args-demp"><code>*args</code> demp</h4>
+<pre><code class="python">def fun_var_args_call(arg1, arg2, arg3):
+    print &quot;arg1:&quot;, arg1
+    print &quot;arg2:&quot;, arg2
+    print &quot;arg3:&quot;, arg3
+
+#list
+args = [&quot;two&quot;, 3]
+fun_var_args_call(1, *args)
+
+# ------------ result ------------
+arg1: 1
+arg2: two
+arg3: 3
+</code></pre>
+
+<h4 id="kwargs-demo_1"><code>**kwargs</code> demo</h4>
+<pre><code class="python">
+def fun_var_args_call(arg1, arg2, arg3):
+    print &quot;arg1:&quot;, arg1
+    print &quot;arg2:&quot;, arg2
+    print &quot;arg3:&quot;, arg3
+
+# dictionary
+kwargs = {&quot;arg3&quot;: 3, &quot;arg2&quot;: &quot;two&quot;}
+fun_var_args_call(1, **kwargs)
+
+# ------------ result ------------
+arg1: 1
+arg2: two
+arg3: 3
+</code></pre>
+
+<p><a href="https://blog.csdn.net/u010852680/article/details/77848570">Python定义的函数（或调用）中参数<em>args 和</em>*kwargs的用法</a></p></div>
         </div>
 
         <footer class="col-md-12">
