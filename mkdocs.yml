@@ -2,7 +2,8 @@ site_name: 小白程序员成长日记
 repo_url: https://github.com/mqaaa
 site_description: 在忙碌的生活中，梦想应更加耀眼。
 site_author: 豚豚
-copyright: 小白程序员成长日记@2018
+copyright: <a href="http://www.miitbeian.gov.cn/">晋ICP备18013421号</a>
+# copyright: [晋ICP备18013421号](http://www.miitbeian.gov.cn/)
 # theme: bootstrap
 
 
