@@ -1,68 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>None</loc>
-     <lastmod>2018-12-16</lastmod>
+     <loc>/</loc>
+     <lastmod>2020-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2018-12-16</lastmod>
+     <loc>/interview/logical/</loc>
+     <lastmod>2020-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>/noticpoint/javascript/</loc>
+     <lastmod>2020-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>/python/Python/</loc>
+     <lastmod>2020-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>/python/args_kwargs/</loc>
+     <lastmod>2020-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2018-12-16</lastmod>
+     <loc>/python/jupyter/</loc>
+     <lastmod>2020-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2018-12-16</lastmod>
+     <loc>/vue/async/</loc>
+     <lastmod>2020-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>None</loc>
-     <lastmod>2018-12-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>None</loc>
-     <lastmod>2018-12-16</lastmod>
+     <loc>/vue/experience/</loc>
+     <lastmod>2020-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
